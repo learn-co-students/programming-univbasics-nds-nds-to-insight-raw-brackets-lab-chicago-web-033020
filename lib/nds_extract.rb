@@ -18,5 +18,19 @@ def directors_totals(nds)
   #
   #
   # Be sure to return the result at the end!
-  nil
+   nds = directors_database
+  result = {}
+  director = 0
+  while director < nds.count do
+    movie = 0
+    gross = 0
+    while movie < nds[director][:movies].count do
+      gross += nds[director][:movies][movie][:worldwide_gross]
+      movie += 1
+    end
+    result[nds[director][:name]] = gross
+    director += 1
+  end
+return result
+
 end
