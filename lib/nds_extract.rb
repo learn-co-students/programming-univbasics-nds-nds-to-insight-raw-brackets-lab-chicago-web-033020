@@ -1,5 +1,6 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'directors_database'
+require 'pry'
 
 # Use loops, variables and the accessing method, [], to loop through the NDS
 # and total up all.
@@ -14,8 +15,9 @@ def directors_totals(nds)
   result = {}
     director_i=0
     while director_i < nds.length do
-      direct_name=nds[director_i][:name]
-      result[direct_name]=0
+      direct_name=nds[director_i][:name]   #这边会出来Stephen Spielberg,index position 0的导演
+      binding.pry
+      result[direct_name]=0  #这边其实会return “导演名”=>0
       movie_i=0
       while movie_i < nds[director_i][:movies].length do
       #  binding.pry
